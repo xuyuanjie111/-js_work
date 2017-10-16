@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>背景颜色随机改变2.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+#box{
+width:200px;
+height:200px;
+background:red;
+}
+</style>
+
+
+<script type="text/javascript">
+function rand(n,m){
+	return parseInt(Math.random()*(m-n)+n);
+}
+window.onload=function(){
+	var box=document.getElementById("box");
+	box.onclick=function(){
+		var r=rand(0,256);
+		this.style.background= 'rgb('+r+','+r+','+r+')';
+	}
+}
+
+</script>
+  </head>
+  
+  <body>
+    <div id="box"></div>
+  </body>
+</html>

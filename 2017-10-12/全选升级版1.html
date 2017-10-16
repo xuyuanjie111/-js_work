@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>全选升级版1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript">
+window.onload=function(){
+	var input=document.getElementsByTagName("input");
+	var count=0;
+	input[0].onclick=function(){
+		if(this.checked==true){
+			for(var i=1;i<input.length;i++){
+				input[i].checked=true;
+			}
+			count=input.length-1;
+			document.title=count;
+			
+		}else{
+			for(var i=1;i<input.length;i++){
+				input[i].checked=false;
+			}
+			count=0;
+			document.title=count;
+			
+		}
+	}
+	 for(var i=1;i<input.length;i++){
+		 input[i].onclick=function(){
+			 if(this.checked==true){
+				 count++;
+			 }else{
+				 count--;
+			 }
+			 if(count==input.length-1){
+				 input[0].checked=true;
+			 }else{
+				 input[0].checked=false;
+				 
+			 }
+			 document.title=count;
+		 }
+	 }
+}
+
+</script>
+  </head>
+  
+  <body>
+    <input type="checkbox">
+    <hr/>
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    
+  </body>
+</html>

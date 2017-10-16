@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>点击div变色(while)1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+div{
+width: 100px;
+height: 100px;
+background: red;
+margin: 10px;
+float: left;
+
+}
+
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	
+	var div=document.getElementsByTagName("div");
+	var i=0;
+	while(i<div.length){
+		div[i].onclick=function(){
+			var j=0;
+			while(j<div.length){
+				div[j].style.background="blue";
+				j++;
+			}
+			this.style.background="green";
+		}
+		i++;
+	}
+}
+
+</script>
+  </head>
+  
+  <body>
+ <div></div><div></div><div></div><div></div><div></div><div></div>
+ <div></div><div></div><div></div><div></div>
+  </body>
+</html>

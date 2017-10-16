@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>选项卡重用.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+   <style type="text/css">
+#box1,#box2{
+width: 300px;
+height: 300px;
+margin: 100px auto;
+border:1px #000 solid;
+font-family: '微软雅黑';
+}
+#box1 a,
+#box2 a{
+display: block;
+float: left;
+width: 100px;
+height: 40px;
+line-height:40px;
+text-align:center;
+background: green;
+color:#fff;
+text-decoration:none;
+
+}
+#box1 div,
+#box2 div{
+width:300px;
+height:260px;
+line-height:260px;
+text-align: center;
+font-size: 40px;
+display: none;
+}
+#box1 a.active,
+#box2 a.active{
+background: blue;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+tab("box1","onclick");
+tab("box2","onmouseover");
+}
+ function tab(id,sev){
+	 var box=document.getElementById(id);
+	  var div=box.getElementsByTagName("div");
+	  var btn=box.getElementsByTagName("a")
+	    for(i=0;i<btn.length;i++){
+	    	btn[i].index=i;
+	    	btn[i][sev]=function(){
+	    		for(i=0;i<btn.length;i++){
+	    			btn[i].className="";
+	    			div[i].style.display="none";
+	    		}
+	    		this.className="active";
+	    		div[this.index].style.display="block";
+	    	}
+	    }
+
+	}
+
+</script>
+  </head>
+  
+  <body>
+   <div id="box1">
+     <a href="javascript:;" class="active">按钮1</a>
+     <a href="javascript:;" >按钮2</a>
+     <a href="javascript:;" >按钮3</a>
+     <div style="display:block;">div1</div>
+     <div>div2</div>
+     <div>div3</div>
+   </div>
+   
+   <div id="box2">
+     <a href="javascript:;" class="active">按钮1</a>
+     <a href="javascript:;" >按钮2</a>
+     <a href="javascript:;" >按钮3</a>
+     <div style="display:block;">div1</div>
+     <div>div2</div>
+     <div>div3</div>
+   </div>
+  </body>
+</html>

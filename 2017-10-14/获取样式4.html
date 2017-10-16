@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>获取样式4.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+#div{
+width: 200px;
+height: 200px;
+background: blue;
+
+}
+
+</style>
+<script type="text/javascript">
+function getSyle(obj,str){
+	if(obj.currentStyle){
+		return obj.currentStyle[attr];
+	}else{
+		return getComputedStyle(obj,false)[attr];
+	}
+}
+window.onload=function(){
+	var box=document.getElementById("box");
+	var div=document.getElementById("div");
+	box.onclick=function(){
+		alert(getStyle(box,"width"));
+	}
+	div.onclick=function(){
+		alert(getStyle(div,"height"));
+	}
+	
+}
+</script>
+  </head>
+  
+  <body>
+   <div id="box" style="width: 400px;height: 400px;background: red;"></div>
+  <div id="div"></div>
+  </body>
+</html>

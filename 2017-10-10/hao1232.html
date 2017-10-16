@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hao1232.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+.red{
+background: red;
+}
+.blue{
+background: blue;
+}
+.pink{
+background: pink;
+}
+</style>
+<script type="text/javascript">
+  window.onload=function(){
+	  var btn1=document.getElementById("btn1");
+	  var btn2=document.getElementById("btn2");
+	  var btn3=document.getElementById("btn3");
+	  var obody=document.body;
+	  btn1.onclick=function(){
+		 obody.className='red';
+	  }
+	  btn2.onclick=function(){
+			 obody.className='blue';
+		  }
+	  btn3.onclick=function(){
+			 obody.className='pink'; 
+		  }
+	  
+  }
+
+</script>
+  </head>
+  
+  <body class="red">
+  <input type="button" id="btn1" value="皮肤1">
+  <input type="button" id="btn2" value="皮肤2">
+  <input type="button" id="btn3" value="皮肤3">
+   
+  </body>
+</html>

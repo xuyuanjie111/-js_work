@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>双色球2.3.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript">
+function findInArr(n,arr){
+	for (var i=0;i<arr.length;i++ ){
+		if(arr[i]==n)return true;
+	}
+	return false;
+}
+function rnd(n,m){
+	return parseInt(Math.random()*(m-n)+n);
+}
+var arr=[];
+for(var i=0;i<6;i++){
+	var n=rnd(1,34);
+	if(findInArr(n,arr)==false){
+		arr.push(n);
+	}else{
+		alert("重复了");
+		i--;
+	}
+}
+document.write(arr);
+</script>
+  </head>
+  
+  <body>
+    This is my HTML page. <br>
+  </body>
+</html>

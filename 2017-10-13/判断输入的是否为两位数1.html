@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>判断输入的是否为两位数1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript">
+window.onload=function(){
+	var text=document.getElementById("text");
+	var btn=document.getElementById("btn");
+	btn.onclick=function(){
+		var val=text.value;
+		if(val>=10&&val<=99){
+			alert("两位数")
+		}else{
+			alert("非两位数")
+		}
+	}
+}
+
+</script>
+  </head>
+  
+  <body>
+    <input type="text" id="text">
+    <input type="button" value="按钮" id="btn">
+  </body>
+</html>

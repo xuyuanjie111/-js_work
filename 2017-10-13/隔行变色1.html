@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>隔行变色1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+.a{
+background: green;
+}
+.b{
+background: blue;
+}
+
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var li=document.getElementsByTagName("li");
+	for(var i=0;i<li.length;i++){
+		if(i%2==0){
+			li[i].className="a";
+			
+		}else{
+			li[i].className="b";
+		}
+	}
+}
+
+
+</script>
+  </head>
+  
+  <body>
+    <ul>
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+    </ul>
+  </body>
+</html>

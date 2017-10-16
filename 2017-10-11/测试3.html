@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>测试3.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  <script type="text/javascript">
+window.onload=function(){
+	var a=document.getElementsByTagName("a");
+	for(i=0;i<a.length;i++){
+		a[i].onclick=function(){
+			alert(this.aa);//IE7/8可以取到值;值就是0,1,2
+
+		}
+	}
+}
+</script>
+  </head>
+  
+  <body>
+   <a href="javascript:;" aa="0">asd</a>
+    <a href="javascript:;" aa="1">asd</a>
+    <a href="javascript:;" aa="2">asd</a>
+  </body>
+</html>

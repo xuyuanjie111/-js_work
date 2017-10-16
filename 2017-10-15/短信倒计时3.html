@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>短信倒计时3.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+ <script type="text/javascript">
+ window.onload=function(){
+		var btn=document.getElementById("btn");
+		var count=10;
+		var time=null;
+		btn.onclick=function(){
+			btn.disabled=true;
+			btn.value=count+"秒后重新发送";
+			time=setInterval(function(){
+				count--;
+			btn.value=count+"秒后重新发送";
+			if(count==0){
+				btn.value="点击重新发送";
+				clearInterval(time);
+				count=10;
+				btn.disabled=false;
+				
+			}
+			},1000);
+		}
+	}
+
+</script>
+  </head>
+  
+  <body>
+   <input type="button" value="点击发送验证码" id="btn">
+  </body>
+</html>

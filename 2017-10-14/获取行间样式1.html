@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>获取行间样式1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+#box{
+width: 300px;
+height: 500px;
+background: blue;
+
+}
+
+
+</style>
+<script type="text/javascript">
+function getStyle(obj,attr){
+	if(obj.currentStyle){
+		return obj.currentStyle[attr];
+	}else{
+		return getComputedStyle(obj,false)[attr];
+		
+	}
+}
+window.onload=function(){
+	var box=document.getElementById("box");
+	box.onclick=function(){
+		alert(getStyle(box,"height"));
+	}
+	
+}
+
+</script>
+  </head>
+  
+  <body>
+    <div id="box"></div>
+  </body>
+</html>
