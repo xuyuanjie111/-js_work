@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+#box {
+	width: 400px;
+	height: 300px;
+	border: #000 1px solid;
+	margin: 100px auto;
+	position: relative;
+}
+#box1 {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background: #ccc;
+	color: #000;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+#box2 {
+	width: 100px;
+	height:40px;
+	text-align: center;
+	line-height:40px;
+	background: #ccc;
+	color: #000;
+	position: absolute;
+	right:0;
+	top: 0;
+}
+</style>
+<script>
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var timer = null;
+	var timer1 = null;
+	var start = 3;//开始拍卖的时间;
+	var end = 5;//结束拍卖的时间
+	oBox1.innerHTML = start + '秒后开始拍卖';
+	
+	timer = setInterval(function(){
+		start--;
+		oBox1.innerHTML = start + '秒后开始拍卖';
+		if(start == 0){
+			oBox1.innerHTML = end + '秒后结束拍卖';	
+			oBox2.innerHTML = '正在拍卖';
+			clearInterval(timer);
+			timer1 = setInterval(function(){
+				end--;
+				oBox1.innerHTML = end + '秒后结束拍卖';
+				if(end == 0){
+					oBox1.innerHTML = '结束拍卖';
+					oBox2.innerHTML = '结束拍卖';
+					clearInterval(timer1);	
+				}
+			},1000);
+		}
+	},1000);
+	
+}
+</script>
+</head>
+
+<body>
+<div id="box">
+	<p id="box1"></p>
+    <h4 id="box2">即将拍卖</h4>
+</div>
+</body>
+</html>
