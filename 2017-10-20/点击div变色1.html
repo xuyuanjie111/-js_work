@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>点击div变色1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+div{
+width: 100px;
+height:100px;
+float:left;
+margin-right: 10px;
+color:#fff;
+font-size:40px;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var div=document.getElementsByTagName("div");
+	for(var i=0;i<div.length;i++){
+		div[i].onclick=function(){
+			this.style.background='red';
+		}
+	}
+	
+}
+</script>
+  </head>
+  
+  <body>
+   <div>1</div>
+   <div>2</div>
+   <div>3</div>
+  </body>
+</html>

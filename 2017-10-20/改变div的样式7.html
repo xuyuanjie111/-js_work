@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>改变div的样式7.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+#box{
+width: 100px;
+height: 100px;
+background: red;
+
+}
+
+</style>
+<script type="text/javascript">
+window,onload=function(){
+	var div=document.getElementById("box");
+	div.mouseover=function(){
+		tobig();
+	}
+	div.mouseout=function(){
+		tosmall();
+	}
+	 function tobig(){
+		 var div=document.getElementById("box");
+		 div.style.width='200px';
+		 div.style.height='200px';
+		 div.style.background='green';
+	 }
+	 function tosmall(){
+		 var div=document.getElementById("box");
+		 div.style.width='100px';
+		 div.style.height='100px';
+		 div.style.background='red';
+	 }
+}
+</script>
+  </head>
+  
+  <body>
+   <div id="box">
+   </div>
+  </body>
+</html>
