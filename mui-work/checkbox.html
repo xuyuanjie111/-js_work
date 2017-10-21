@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <style type="text/css">
+    	
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">标题</h1>
+	</header>
+	<div class="mui-content">
+
+<div id="sheet" class="mui-popover mui-popover-bottom mui-popover-action ">
+    <!-- 可选择菜单 -->
+    <ul class="mui-table-view">
+      <li class="mui-table-view-cell">
+        <a href="#">菜单1</a>
+      </li>
+      <li class="mui-table-view-cell">
+        <a href="#">菜单2</a>
+      </li>
+    </ul>
+    <!-- 取消菜单 -->
+    <ul class="mui-table-view">
+      <li class="mui-table-view-cell">
+        <a href="#sheet1"><b>取消</b></a>
+      </li>
+    </ul>
+</div>
+<a href="#sheet" id="openSheet" class="mui-btn mui-btn-primary mui-btn-block">打开操作表</a>
+
+
+	   <span class="mui-badge mui-badge-inverted mui-btn-blue">1</span>
+	   <span class="mui-badge mui-btn-blue">1</span>
+	   <div class="mui-input-row mui-radio ">
+	       <label id='1-1'>男</label>
+	       <input name="radio" type="radio" value='男' class='sex'>
+	   </div>
+	    <div class="mui-input-row mui-radio ">
+	       <label id='2-1'>女</label>
+	       <input name="radio" type="radio" value='女'class='sex'>
+	   </div>
+	</div>
+	<input type="button" value='提交' id='submit1'>
+		<div class="mui-input-row mui-checkbox mui-left">
+		  <label>复选1</label>
+		  <input name="checkbox1" type="checkbox" checked class='box' value='复选1'>
+		  	<div class="mui-input-row mui-checkbox mui-left">
+		  <label>复选2</label>
+		  <input name="checkbox1" type="checkbox" checked class='box' value='复选2'>
+		  	<div class="mui-input-row mui-checkbox mui-left">
+		  <label>复选3</label>
+		  <input name="checkbox1" type="checkbox" checked class='box' value='复选3'>
+		  	<div class="mui-input-row mui-checkbox mui-left">
+		  <label>复选4</label>
+		  <input name="checkbox1" type="checkbox" checked class='box' value='复选4'>
+		</div>
+		<input type="button" value='提交' id='submit2'>
+	
+</body>
+<script type="text/javascript">
+window.onload=function(){
+	var aInput=document.querySelectorAll(".sex")
+	for (var i=0;i<aInput.length;i++){
+		aInput[i].addEventListener('tap',function(){
+			alert(this.value)
+			mui.toast(this.value)
+		})
+	}
+var asub=document.querySelector("#submit1")
+	var aInput=document.querySelectorAll(".sex")
+	asub.addEventListener('tap',function(){
+		var sVal=null
+	for (var i=0;i<aInput.length;i++){
+		if(aInput[i].checked==true){
+		sVal = aInput[i].value 	}
+		}
+	if(sVal==null){mui.toast('请选择');return}
+	mui.toast(sVal)
+		})
+	
+
+/*var aBox=document.querySelectorAll(".box")
+var aSub=document.querySelector("#submit2")
+aSub.addEventListener('tap',function(){
+	var sval=null
+	var check=new Array
+	for (var i=0;i<aBox.length;i++){
+		if(aBox[i].checked==true){
+			sval=aBox[i].value
+		    check[i]=sval}
+		}
+	
+	if(sval==null){mui.toast('请选择');return}
+	 mui.toast(check)
+		})*/
+	var aBox=document.querySelectorAll(".box")
+var aSub=document.querySelector("#submit2")
+aSub.addEventListener('tap',function(){
+	var sval=null
+	var check=new Array
+	for (var i=0;i<aBox.length;i++){
+		if(aBox[i].checked==true){
+			sval=aBox[i].value
+		    check[i]=sval}
+		for (var a=0;a<check.length;a++){
+		   mui.toast(check[0]+check[1]+check[2]+check[3] )
+		    
+		}
+		}
+	
+	
+	if(sval==null){mui.toast('请选择');return}
+	 
+		})
+
+}
+</script>
+</html>

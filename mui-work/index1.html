@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">时间选择器</h1>
+		</header>
+		<div class="mui-content">
+		  <button type="button" class="mui-btn mui-btn-blue" id='pickday'>点击选择日期</button>  
+		  <button type="button" class="mui-btn mui-btn-blue" id='picktime'>点击选择时间</button>
+		</div>
+	</body>
+     <script type="text/javascript">
+     	mui.plusReady(function () {
+     	    var oDate=document.getElementById('pickday')
+     	    oDate.addEventListener('tap',function(){
+     	    	var dDate=new Date();
+     	    		dDate.setFullYear(2017,9,18);
+     	    		var minDate=new Date()
+     	    		minDate.setFullYear(2010,0,1)
+     	    		var maxDate=new Date()
+     	    		maxDate.setFullYear(2018,0,1)
+     	    	plus.nativeUI.pickDate(function(e){
+     	    		var d = e.date;
+                mui.toast('您选择的日期是:' + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())
+
+     	    		console.log(e)
+     	    	},function(e){
+     	    		mui.toast("您没有选择日期")
+     	    	},{
+     	    		title:'请选择日期',
+     	    		date:dDate ,
+     	    		minDate:minDate,
+     	    		maxDate:maxDate,
+     	    	})
+     	    	
+     	    })
+     	       var oDate=document.getElementById('picktime')
+     	    oDate.addEventListener('tap',function(){
+     	    	var dtime=new Date();
+     	    		dtime.setHours(20,37);
+     	    		/*var minDate=new Date()
+     	    		minDate.setHours(2010,0,1)
+     	    		var maxDate=new Date()
+     	    		maxDate.setFullYear(2018,0,1)*/
+     	    	plus.nativeUI.pickTime(function(e){
+     	    		var d = e.date;
+                mui.toast('您选择时间是:' + d.getHours() + "-" + d.getMinutes())
+
+     	    		console.log(e)
+     	    	},function(e){
+     	    		mui.toast("您没有选择时间")
+     	    	},{
+     	    		title:'请选择时间',
+     	    		is24Hours:true,
+     	    		date:dtime ,
+     	    		
+     	    	})
+     	    	
+     	    })
+     	})
+     </script>
+</html>
