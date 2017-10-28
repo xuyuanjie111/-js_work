@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            var oBtn = $('#btn');
+            var oWrap = $('#wrap');
+
+            oBtn.click(function(){
+                var oStrong = $('<strong>我是一个strong标签</strong>');
+                oStrong.insertBefore(oWrap);
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="点击" id="btn"/>
+<div id="wrap">
+    <h3>我是一个H3</h3>
+</div>
+</body>
+</html>

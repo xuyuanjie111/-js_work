@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            var oTxt = $('#txt');
+            $('#btn').click(function(){
+                var oLi = $('<li>'+oTxt.val()+'<a href="javascript:;">删除</a> </li>');
+                oLi.appendTo('#box');
+                oTxt.val('');
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt">
+<input type="button" value="添加" id="btn">
+<ul id="box">
+    <li>111<a href="javascript:;">删除</a> </li>
+</ul>
+</body>
+</html>

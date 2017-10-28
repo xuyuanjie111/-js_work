@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #div2 {
+            margin-left: 100px;
+            position: relative;
+        }
+
+        #div3 {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            margin-left: 300px;
+            margin-top: 100px;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+//            alert($('#div3').offset().left);
+            alert($('#div3').offset().top);
+        })
+    </script>
+</head>
+<body>
+<div id="div1">
+    <div id="div2">
+        <div id="div3"></div>
+    </div>
+</div>
+</body>
+</html>

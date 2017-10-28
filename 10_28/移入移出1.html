@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#div').hover(function(){
+                alert('1');
+            },function(){
+                alert('2');
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>

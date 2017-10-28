@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('div:has(p)').css('background','red');
+        })
+    </script>
+</head>
+<body>
+<div>
+    我是一个p标签;
+</div>
+<div>
+    <p>我也是一个标签;</p>
+</div>
+</body>
+</html>

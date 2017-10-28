@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('#div').bind('mousedown', function (ev) {
+                var disX = ev.clientX - $(this).offset().left;
+                var disY = ev.clientY - $(this).offset().top;
+                function fnMove(ev) {
+                    var l = ev.clientX - disX;
+                    var t = ev.clientY - disY;
+                    $('#div').css({left: l + 'px', top: t + 'px'});
+                }
+                $(document).bind('mousemove',fnMove);
+                function fnUnbind(){
+                    $(document).unbind('mousemove');
+                    $(document).unbind('mouseup');
+                }
+                $(document).bind('mouseup',fnUnbind);
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+jsjfdjfsgkdsfkg;lfd
+<div id="div">
+</div>
+</body>
+</html>

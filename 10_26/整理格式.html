@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById('btn');
+            var oTxt1 = document.getElementById('txt1');
+            var oTxt2 = document.getElementById('txt2');
+
+            oBtn.onclick = function(){
+                oTxt2.value=oTxt1.value;
+            }
+        }
+    </script>
+</head>
+<body>
+<textarea name="" id="txt1" cols="30" rows="10"></textarea>
+<input type="button" value="整理" id="btn">
+<textarea name="" id="txt2" cols="30" rows="10"></textarea>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #wrap {
+            width: 590px;
+            height: 340px;
+            position: relative;
+            overflow: hidden;
+            margin: 100px auto;
+            border: #333 2px solid;
+        }
+
+        #wrap ol{
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            margin-left: -70px;
+        }
+        #wrap ol li{
+            width: 30px;
+            height: 30px;
+            background: #ccc;
+            float: left;
+            margin-right: 5px;
+            border-radius: 50%;
+        }
+        #wrap ul {
+            position: absolute;
+            height: 340px;
+        }
+        #wrap ul li{
+            width: 590px;
+            height: 340px;
+        }
+
+        #wrap ol li.active{
+            background: red;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            var aBtn = $('#wrap ol li');
+            var oUl = $('#wrap ul');
+
+            aBtn.hover(function(){
+                aBtn.removeClass('active');
+                $(this).addClass('active');
+                oUl.stop().animate({top:-340*$(this).index()});
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="wrap">
+    <ul>
+        <li><img src="img/s1.jpg" alt=""/></li>
+        <li><img src="img/s2.jpg" alt=""/></li>
+        <li><img src="img/s3.jpg" alt=""/></li>
+        <li><img src="img/s4.jpg" alt=""/></li>
+    </ul>
+    <ol>
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function(){
+            var oTxt = document.getElementById('txt');
+            var oBtn = document.getElementById('btn');
+
+            var reg = /^[\u4e00-\u9fa5]{2,6}$/;
+
+            oBtn.onclick = function () {
+                alert(reg.test(oTxt.value));
+            }
+        }
+    </script>
+</head>
+
+<body>
+<input type="text" name="" id="txt">
+<input type="button" value="校验" id="btn">
+</body>
+</html>

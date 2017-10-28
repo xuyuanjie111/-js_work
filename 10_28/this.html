@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            var aBtn = $('input');
+
+            aBtn.click(function(){
+                alert($(this).val());
+            });
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="按钮1">
+<input type="button" value="按钮2">
+<input type="button" value="按钮3">
+</body>
+</html>

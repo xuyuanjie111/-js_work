@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            function fn() {
+                alert('1');
+            }
+
+            $('#div1').bind('mousewheel', fn);
+
+            $('#div1').unbind('mousewheel', fn);
+        });
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>
