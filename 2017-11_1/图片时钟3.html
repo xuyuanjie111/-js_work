@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>图片时钟3.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+    <style type="text/css">
+body{
+background: #000;
+color:#fff;
+font-size:50px;
+text-align:center;
+padding-top: 300px;
+}
+</style>
+<script type="text/javascript">
+function addzero(n){
+	return n<10?"0"+n:""+n;
+}
+window.onload=function(){
+	var img=document.getElementsByTagName("img");
+	clock();
+	setInterval(clock,1000)
+	function clock(){
+	var date=new Date();
+	var hour=date.getHours();
+	var min=date.getMinutes();
+	var sec=date.getSeconds();
+	var str=addzero(hour)+addzero(min)+addzero(sec);
+	for(var i=0;i<img.length;i++){
+		img[i].src='img/'+str.charAt(i)+'.png'
+	}
+	}
+}
+</script>
+  </head>
+  
+  <body>
+    <img alt="" src="img/0.png">
+    <img alt="" src="img/0.png">:
+    <img alt="" src="img/0.png">
+    <img alt="" src="img/0.png">:
+    <img alt="" src="img/0.png">
+    <img alt="" src="img/0.png">
+  </body>
+</html>

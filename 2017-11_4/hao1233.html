@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hao1233.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+.blue{
+background: blue;
+}
+.gray{
+
+background: gray;
+}
+.orange{
+background: orange;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var btn1=document.getElementById("btn1");
+	var btn2=document.getElementById("btn2");
+	var btn3=document.getElementById("btn3");
+	var obody=document.body;
+	btn1.onclick=function(){
+		obody.className='blue';
+	}
+	btn2.onclick=function(){
+		obody.className='gray';
+	}
+	btn3.onclick=function(){
+		obody.className='orange';
+	}
+}
+</script>
+  </head>
+  
+  <body class="blue">
+   <input value="皮肤1" id="btn1" type="button" >
+   <input value="皮肤2" id="btn2" type="button" >
+   <input value="皮肤3" id="btn3" type="button" >
+   
+  </body>
+</html>

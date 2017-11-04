@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>倒计时3.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  <style type="text/css">
+#box{
+width: 100%;
+height:400px;
+color:#fff;
+background:black;
+font-size: 40px;
+line-height: 400px;
+text-align: center;
+}
+
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var box=document.getElementById("box");
+	var date=new Date();
+	date.setFullYear(2017, 12, 12);
+	date.setHours(0, 0, 0,0);
+	function countdown(){
+		var ms=date.getTime()-new Date().getTime();
+		var sec=parseInt(ms/1000);
+		var day=parseInt(sec/86400);
+		sec%=86400;
+		var hour=parseInt(sec/3600);
+		sec%=3600;
+		var min=parseInt(sec/60);
+		sec%=60;
+		box.innerHTML='距离2017年12月12日还有:'+day+'天'+hour+'时'+min+'分'+sec+'秒';
+
+	}
+	countdown();
+	setInterval(countdown,1000);
+}
+
+</script>
+  </head>
+  
+  <body>
+    <div id="box">距离2017年12月12日还有:xx天xx时xx分xx秒</div>
+  </body>
+</html>
